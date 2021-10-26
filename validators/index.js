@@ -38,12 +38,18 @@ module.exports.registerRouteValidators = checkSchema({
         in: ["body"],
         exists: {
             errorMessage: "First name is required",
+        },
+        notEmpty: {
+            errorMessage: "First name must not be blank"
         }
     },
     lastName: {
         in: ["body"],
         exists: {
             errorMessage: "Last name is required",
+        },
+        notEmpty: {
+            errorMessage: "Last name must not be blank"
         }
     },
 });

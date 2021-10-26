@@ -8,8 +8,11 @@ const { registerRouteValidators } = require("../validators");
 
 const { jwtOptions } = require("../utils/jwtOptions");
 const registerUser = require("../controllers/registerUser");
+const testController = require("../controllers/testController");
 
-const { getToken, refreshToken } = jwtAuth(jwtOptions);
+const { verifyToken, getToken, refreshToken } = jwtAuth(jwtOptions);
+
+router.get("/", verifyToken, testController);
 
 router.post("/register", registerRouteValidators, validatorResponse, registerUser);
 

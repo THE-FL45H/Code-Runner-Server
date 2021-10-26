@@ -9,6 +9,7 @@ module.exports.jwtOptions = {
             const user = await User.findOne({
                 where: { email }
             });
+            if(!user) return null;
             const match = await checkPassword(password, user.password);
             if(!match) return null;
             return user;

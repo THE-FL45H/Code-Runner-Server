@@ -1,6 +1,10 @@
 module.exports.renderSequelizeErrors = (errors) => {
     try {
-        return errors.map((err) => err.message);
+        return {
+            errors: errors.map((err) => ({
+                msg: err.message
+            }))
+        };
     } catch (err) {
         return `${errors}`;
     }
