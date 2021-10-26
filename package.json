@@ -11,9 +11,11 @@
   "author": "Augustine Smith <augustine.smith@amalitech.org>",
   "license": "MIT",
   "dependencies": {
+    "bcrypt": "^5.0.1",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "express-jwt-auth": "github:fl45hER/express-jwt-auth",
+    "express-validator": "^6.13.0",
     "sequelize": "^6.8.0"
   }
 }
